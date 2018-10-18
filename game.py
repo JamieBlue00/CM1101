@@ -210,7 +210,9 @@ def move(exits, direction):
     >>> move(rooms["Reception"]["exits"], "west") == rooms["Office"]
     False
     """
-    
+    current_room = rooms[exits[direction]]
+    for direction in current_room:
+        return current_room
     
 
 

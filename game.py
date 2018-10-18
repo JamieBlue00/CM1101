@@ -2,7 +2,6 @@
 
 from map import rooms
 import string
-import re
 
 
 def remove_punct(text):
@@ -191,18 +190,11 @@ def menu(exits):
 
     # Repeat until the player enter a valid choice
     while True:
-        pass
-        # COMPLETE THIS PART:
-        
-        # Display menu
-
-        # Read player's input
-
-        # Normalise the input
-
-        # Check if the input makes sense (is valid exit)
-            # If so, return the player's choice
-
+        print_menu(exits)
+        user_input = str(input("Where do you want to go? "))
+        normalise_input(user_input)
+    if is_valid_exit(exits, user_input) == True:
+        return user_input
 
 
 
@@ -218,7 +210,8 @@ def move(exits, direction):
     >>> move(rooms["Reception"]["exits"], "west") == rooms["Office"]
     False
     """
-    pass
+    
+    
 
 
 # This is the entry point of our program
